@@ -31,6 +31,7 @@ test('Day 10 mini project', async ({ page }) => {
     await page.waitForTimeout(5000);
     await blogHomePage.verifyfooterlinks();
     await blogHomePage.emailsignup();
+    await blogHomePage.search();
 });
 
 

@@ -20,6 +20,7 @@ export class BlogHomePage {
     }
     async verifyaccessability(){
         await this.page.getByRole('link', { name: 'Enable Accessibility'}).click();
+        await this.page.getByRole('link', { name: 'Exit Accessibility Mode' }).click();
 }
 async verifyfooterlinks(){
 const footerLinks = this.page.locator('footer a');
@@ -30,11 +31,16 @@ async emailsignup(){
         await this.page.getByRole('textbox').fill('chandgs@gmail.com');
         await this.page.getByText('Sign Up').first().click();
     }
+    async search(){
+        await this.page.locator('[data-js="search-trigger"]').click();
+        await this.page.getByPlaceholder('search-box-input').fill('Blog');
+        await this.page.waitForTimeout(5000);
+    }
 
 
         
     }
-   /* 
-*/
+   
+
     
     
